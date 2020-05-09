@@ -1,9 +1,3 @@
-//var rowsDiv = document.getElementById("#")
-
-
-
-//var currentDateAndTime = Date(Date.now());
-//$(".lead").text(currentDateAndTime);
 
 function renderTime() {
     //date
@@ -16,7 +10,7 @@ function renderTime() {
     var day = mydate.getDay();
     var month = mydate.getMonth();
     var daym = mydate.getDate();
-    var dayarray =["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    var dayarray =["Sunday,", "Monday,", "Tuesday,", "Wednesday,", "Thursday,", "Friday,", "Saturday,"];
     var montharray =["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
     //time
@@ -50,3 +44,28 @@ function renderTime() {
     }
 renderTime();
 
+var userInput = document.querySelector("textarea");
+var saveBtn = document.querySelector("fa-save");
+
+
+
+function displayMessage(type, message) {
+  msgDiv.textContent = message;
+  msgDiv.setAttribute("class", type);
+
+
+saveBtn.addEventListener("click", function(event) {
+  event.preventDefault();
+
+  var userInput = document.querySelector("textarea").value;
+
+    localStorage.setItem("textarea", userInput);
+    
+  });
+}
+displayMessage();
+
+
+//localStorage.setItem('key', 'value')
+//var workdayHours = {
+//[ "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"]};
