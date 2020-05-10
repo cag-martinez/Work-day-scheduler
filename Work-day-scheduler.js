@@ -44,28 +44,21 @@ function renderTime() {
     }
 renderTime();
 
-var userInput = document.querySelector("textarea");
-var saveBtn = document.querySelector("fa-save");
+var userInput = localstorage.getItem("#row1");
+var saveBtn = document.querySelector("#saveBtn");
+var workdayHours = [ "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm","5pm"]
 
-
-
-function displayMessage(type, message) {
-  msgDiv.textContent = message;
-  msgDiv.setAttribute("class", type);
-
+function displayMessage(type, textarea) {
 
 saveBtn.addEventListener("click", function(event) {
   event.preventDefault();
 
-  var userInput = document.querySelector("textarea").value;
+  var userInput = document.querySelector("#row1").value;
 
-    localStorage.setItem("textarea", userInput);
+ // localStorage.setItem("textarea", userInput);
     
   });
 }
-displayMessage();
-
+console.log();
 
 //localStorage.setItem('key', 'value')
-//var workdayHours = {
-//[ "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"]};
