@@ -44,21 +44,23 @@ function renderTime() {
     }
 renderTime();
 
-var userInput = localstorage.getItem("#row1");
-var saveBtn = document.querySelector("#saveBtn");
-var workdayHours = [ "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm","5pm"]
+//var workdayHours = [ "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm","5pm"]
 
-function displayMessage(type, textarea) {
+//$("#row1").html("enter text");
 
-saveBtn.addEventListener("click", function(event) {
-  event.preventDefault();
+//var newDiv = $("<p>");
 
-  var userInput = document.querySelector("#row1").value;
+//newDiv.text("users input here");
+//$("#row1").append(newDiv);
 
- // localStorage.setItem("textarea", userInput);
-    
+
+
+$( "textarea" ).on( "click", function() {
+    $( this ).val(function( i, val ) {
+      return val.toUpperCase();
+    });
+    console.log(this);
   });
-}
-console.log();
 
-//localStorage.setItem('key', 'value')
+
+//add an .on("click", function())  to the save button to store the users data
