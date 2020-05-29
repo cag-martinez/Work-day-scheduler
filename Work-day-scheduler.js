@@ -41,26 +41,73 @@ function renderTime() {
         myClock.innerText = " " +dayarray[day]+ " " +daym+ " " +montharray[month]+ " " +year+ " | " +h+ ":" +m+ ":" +s;
 
         setTimeout("renderTime()", 1000);
-    }
+    
+}
 renderTime();
 
-//var workdayHours = [ "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm","5pm"]
 
-//$("#row1").html("enter text");
-
-//var newDiv = $("<p>");
-
-//newDiv.text("users input here");
-//$("#row1").append(newDiv);
-
-
-
-$( "textarea" ).on( "click", function() {
-    $( this ).val(function( i, val ) {
-      return val.toUpperCase();
+$('textarea').on("keyup", function(e){
+    var userEvent = $("<textarea class='list-group-item list-group-item-action list-group-item-success'></textarea>").text($("textarea").val());
+    var save = $("<i class='fas fa-save'></i>").click(function(){
+        console.log(testarea);
     });
-    console.log(this);
-  });
+});
+
+//userEvent.append(textarea);
 
 
-//add an .on("click", function())  to the save button to store the users data
+var entries = []
+$( ".btn" ).on( "click", function() {
+    //event.preventDefault();
+    console.log($(this).attr("name"));
+    console.log($("#textarea-" + $(this).attr("name")).val());
+    var time = $(this).attr("name")
+    var newEntrie = {[time]:$("#textarea-" + $(this).attr("name")).val()}
+    
+    entries.push(newEntrie)
+    console.log(entries);
+    saveToLocalStorage();
+});
+
+function saveToLocalStorage() {
+
+    var strEntries = JSON.stringify(entries)
+    localStorage.setItem('entries', strEntries)
+}
+
+
+var tomObj = {name:'tom', job: 'tutor'}
+tomObj['job']
+
+function readLocalStorage() {
+    var parsedEntries = JSON.parse(localStorage.getItem("entries"))
+    if (parsedEntries) {
+        entries = parsedEntries
+    }
+    
+    // console.log('unparsed localStorage.getItem("entries")', localStorage.getItem("entries"))
+    // console.log('WE R READING THE LOCAL STOREAGE!!!',parsedEntries)
+    for (var i = 0; i< parsedEntries.length; i++){
+        // console.log("lloping?", parsedEntries[i])
+        // console.log('just the text~!~!!!!!', parsedEntries[i][Object.keys(parsedEntries[i])[0]])
+        // console.log('num we r trying to rock with ', Object.keys(parsedEntries[i])[0])
+
+
+
+        $("#textarea-" + Object.keys(parsedEntries[i])[0]).val(parsedEntries[i][Object.keys(parsedEntries[i])[0]])
+    }
+}
+
+readLocalStorage()
+//     console.log(this);
+  
+// var entries = [
+//     {9: 'wake up'},
+//     {10: 'eat'}
+// ]
+
+
+
+
+
+

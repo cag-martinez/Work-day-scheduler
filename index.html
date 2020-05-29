@@ -1,107 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylessheet" src="Work-day-scheduler.css"/>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylessheet" src="Work-day-scheduler.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <title>Work-day-scheduler</title>
+  <title>Work-day-scheduler</title>
 </head>
+
 <body onLoad="renderTime();">
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h1 class="display-4" style="text-align: center;">Work-day-scheduler</h1>
-          <p class="lead" id="clockDisplay" style="text-align: center;"></p>
-        </div>
-    </div>
-<!-- save icon and textarea-->
-    <div id="hour-9" class="row time-block">
-        <div class="col-md-1 hour">
-          9AM
-        </div>
-        <textarea id="row1" class="col-md-10 description">
-        </textarea>
-        <button id="saveBtn" class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
-      </div>
-    
-    
-      <div id="hour-10" class="row time-block">
-        <div class="col-md-1 hour">
-          10AM
-        </div>
-        <textarea id = "row" class="col-md-10 description">
-        </textarea>
-        <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
-    </div>
-    <div id="hour-11" class="row time-block">
-        <div class="col-md-1 hour">
-          11AM
-        </div>
-        <textarea id="row" class="col-md-10 description">
-        </textarea>
-        <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
-      </div>
-    <div id="hour-12" class="row time-block">
-        <div class="col-md-1 hour">
-          12PM
-        </div>
-        <textarea id="row"class="col-md-10 description">
-        </textarea>
-        <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
-    </div>
-    <div id="hour-1" class="row time-block">
-        <div class="col-md-1 hour">
-          1PM
-        </div>
-        <textarea id="row" class="col-md-10 description">
-        </textarea>
-        <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
-      </div>
-    <div id="hour-2" class="row time-block">
-        <div class="col-md-1 hour">
-          2PM
-        </div>
-        <textarea id="row" class="col-md-10 description">
-        </textarea>
-        <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
-    </div>
-    <div id="hour-3" class="row time-block">
-        <div class="col-md-1 hour">
-          3PM
-        </div>
-        <textarea id="row" class="col-md-10 description">
-        </textarea>
-        <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
-      </div>
-    <div id="hour-4" id="row" class="row time-block">
-        <div class="col-md-1 hour">
-          4PM
-        </div>
-        <textarea class="col-md-10 description">
-        </textarea>
-        <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
-    </div>
-    <div id="hour-5" class="row time-block">
-        <div class="col-md-1 hour">
-          5PM
-        </div>
-        <textarea id="row" class="col-md-10 description">
-        </textarea>
-        <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
-      </div>
-       
-      <script src="./Work-day-scheduler.js"></script>
 
-
+<div class="container">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+  <div class="jumbotron jumbotron-fluid" style="background-color: rgba(122, 206, 122, 0.577);">
     
+      <h1 class="display-4" style="text-align: center;">Work Day Schedule</h1>
+      <p class="lead" id="clockDisplay" style="text-align: center;"></p>
+    </div>
+  </div>
+  </div>
+  </div>
+  <!-- save icon and textarea-->
+  <hr>
+<div class="container">
+<div class="row">
+<div class="col-1 list-group-item list-group-item-action list-group-item-success" id="9">9AM</div>
+<div class="col-10">
+<textarea id='textarea-9' class="list-group-item list-group-item-action list-group-item-success"></textarea></div>
+<div class="col-1 "><button name='9' class="btn btn-dark btn-lg"><i class="fas fa-save"></i></button>
+</div>
+</div>
+
+<div class="row">
+<div class="col-1 list-group-item list-group-item-action list-group-item-success" id="10">10AM</div>
+<div class="col-10">
+<textarea id='textarea-10' class="list-group-item list-group-item-action list-group-item-success"></textarea></div>
+<div class="col-1"><button name='10' class="btn btn-dark btn-lg"><i class="fas fa-save"></i></button>
+</div>
+</div>
+
+<div class="row">
+<div class="col-1 list-group-item list-group-item-action list-group-item-success" id="11">11AM</div>
+<div class="col-10">
+<textarea id='textarea-11' class="list-group-item list-group-item-action list-group-item-success"></textarea></div>
+<div class="col-1"><button name='11' class="btn btn-dark btn-lg"><i class="fas fa-save"></i></button>
+</div>
+</div>
+
+<div class="row">
+<div class="col-1 list-group-item list-group-item-action list-group-item-success" id="12">12pm</div>
+<div class="col-10">
+<textarea id='textarea-12' class="list-group-item list-group-item-action list-group-item-success"></textarea></div>
+<div class="col-1"><button name='12' class="btn btn-dark btn-lg"><i class="fas fa-save" style="box-sizing: large;"></i></button>
+</div>
+</div>
+
+<div class="row">
+<div class="col-1 list-group-item list-group-item-action list-group-item-success" id="1">1pm</div>
+<div class="col-10">
+<textarea id='textarea-1' class="list-group-item list-group-item-action list-group-item-success"></textarea></div>
+<div class="col-1"><button name='1' class="btn btn-dark btn-lg"><i class="fas fa-save"></i></button>
+</div>
+</div>
+
+<div class="row">
+<div class="col-1 list-group-item list-group-item-action list-group-item-success" id="2">2pm</div>
+<div class="col-10">
+<textarea id='textarea-2' class="list-group-item list-group-item-action list-group-item-success"></textarea></div>
+<div class="col-1"><button name='2' class="btn btn-dark btn-lg"><i class="fas fa-save"></i></button>
+</div>
+</div>
+
+<div class="row">
+<div class="col-1 list-group-item list-group-item-action list-group-item-success" id="3">3pm</div>
+<div class="col-10">
+<textarea id='textarea-3' class="list-group-item list-group-item-action list-group-item-success"></textarea></div>
+<div class="col-1"><button name='3' class="btn btn-dark btn-lg"><i class="fas fa-save"></i></button>
+</div>
+</div>
+
+<div class="row">
+<div class="col-1 list-group-item list-group-item-action list-group-item-success" id="4">4pm</div>
+<div class="col-10">
+<textarea id='textarea-4' class="list-group-item list-group-item-action list-group-item-success"></textarea></div>
+<div class="col-1"><button name='4' class="btn btn-dark btn-lg"><i class="fas fa-save"></i></button>
+</div>
+</div>
+
+<div class="row">
+<div class="col-1 list-group-item list-group-item-action list-group-item-success" id="5">5pm</div>
+<div class="col-10">
+<textarea id='textarea-5' class="list-group-item list-group-item-action list-group-item-success"></textarea>
+</div>
+<div class="col-1"><button name='5' class="btn btn-dark btn-lg"><i class="fas fa-save"></i></button>
+</div>
+</div>
+
+</div>
+
+<script src="./Work-day-scheduler.js"></script>
+
+<hr>
+
 
 </body>
+
 </html>
