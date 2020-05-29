@@ -41,6 +41,23 @@ function renderTime() {
         myClock.innerText = " " +dayarray[day]+ " " +daym+ " " +montharray[month]+ " " +year+ " | " +h+ ":" +m+ ":" +s;
 
         setTimeout("renderTime()", 1000);
+
+        function timeOfDay(){
+    
+            $("#time-block").each(function () {
+                var currentHour = new Date().getHours()
+                var elem = parseInt($(this).attr("id"))
+                if (elem === currentHour) {
+                    $(this).addClass('current')
+                }
+                else if (elem < currentHour) {
+                    $(this).addClass('past')
+                }else {
+                    $(this).addClass("future")
+                } 
+            })
+        }
+        timeOfDay();
     
 }
 renderTime();
@@ -76,9 +93,6 @@ function saveToLocalStorage() {
 }
 
 
-var tomObj = {name:'tom', job: 'tutor'}
-tomObj['job']
-
 function readLocalStorage() {
     var parsedEntries = JSON.parse(localStorage.getItem("entries"))
     if (parsedEntries) {
@@ -99,12 +113,10 @@ function readLocalStorage() {
 }
 
 readLocalStorage()
-//     console.log(this);
-  
-// var entries = [
-//     {9: 'wake up'},
-//     {10: 'eat'}
-// ]
+
+
+
+
 
 
 
